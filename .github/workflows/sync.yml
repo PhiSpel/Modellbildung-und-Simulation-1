@@ -39,9 +39,17 @@ jobs:
           merge_args: ${{ env.MERGE_ARGS }}
           push_args: ${{ env.PUSH_ARGS }}
           spawn_logs: ${{ env.SPAWN_LOGS }}
-  gh_pages:
+  gh-pages:
     runs-on: ubuntu-latest
     steps:
-    - name: HMTL is updated here
-      shell: bash
-      run: echo "gh-pages branch is updated using the action"
+      - name: GitHub Sync to Upstream Repository (gh-pages)
+        uses: dabreadman/sync-upstream-repo@v1.3.0
+        with: 
+          upstream_repo: ${{ env.UPSTREAM_URL }}
+          upstream_branch: "gh-pages"
+          downstream_branch: ${{ env.DOWNSTREAM_BRANCH }}
+          token: ${{ env.WORKFLOW_TOKEN }}
+          fetch_args: ${{ env.FETCH_ARGS }}
+          merge_args: ${{ env.MERGE_ARGS }}
+          push_args: ${{ env.PUSH_ARGS }}
+          spawn_logs: ${{ env.SPAWN_LOGS }}
