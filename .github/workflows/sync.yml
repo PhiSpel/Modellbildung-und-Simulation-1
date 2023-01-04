@@ -1,4 +1,4 @@
-name: Sync Upstream with dabreadman
+name: Sync Upstream
 
 env:
   # Required, URL to upstream (fork base)
