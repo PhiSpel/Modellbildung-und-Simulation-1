@@ -2,7 +2,7 @@ name: html-preview
 on:
   status:
   #workflow_run:
-  #  workflows: ["Sync Upstream with dabreadman"]
+  #  workflows: ["Sync Upstream"]
   #  types:
   #    - completed
   workflow_dispatch:
