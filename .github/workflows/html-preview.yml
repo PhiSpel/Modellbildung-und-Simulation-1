@@ -1,5 +1,11 @@
 name: html-preview
-on: [status]
+on:
+  status:
+  workflow_run:
+    workflows: ["Sync Upstream"]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   html-preview:
